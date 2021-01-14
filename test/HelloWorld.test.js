@@ -1,5 +1,4 @@
-import pkg from 'chai';
-const { assert  } = pkg;
+const { assert } = require('chai');
 
 describe('Array', () => {
   describe('#indexOf()', () => {
