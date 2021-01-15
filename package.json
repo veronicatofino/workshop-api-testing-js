@@ -17,7 +17,6 @@
   ],
   "author": "Veronica Tofino [veronicatofino@gmail.com] (veronicatofino)",
   "license": "MIT",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/veronicatofino/workshop-api-testing-js/issues"
   },
