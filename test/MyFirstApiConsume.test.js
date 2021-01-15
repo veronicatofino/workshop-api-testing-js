@@ -76,7 +76,6 @@ describe('First Api Tests', () => {
     });
 
     it('Consume HEAD Service', async () => {
-
         const response = await agent.head('https://httpbin.org/headers');
 
         expect(response.status).to.equal(statusCode.OK);
