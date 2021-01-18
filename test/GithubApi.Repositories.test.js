@@ -40,7 +40,7 @@ describe('Given a Github Api Test url', () => {
         repositoryWanted = responseRepositories.body.find((element) => element.name === repository);
       });
 
-      it('The repository wanted should be there', () => {
+      it('Then the repository wanted should be there', () => {
         expect(repositoryWanted.name).to.equal(repository);
         expect(repositoryWanted.private).to.equal(false);
         expect(repositoryWanted.description).to.equal('An awesome html report for Jasmine');
@@ -87,7 +87,7 @@ describe('Given a Github Api Test url', () => {
               responseReadMe = await agent.get(fileReadMe.download_url);
             });
 
-            it('The MD5 of the file should be the same of the file downloaded', () => {
+            it('Then the MD5 of the file should be the same of the file downloaded', () => {
               expect(md5(responseReadMe.text)).to.equal(MD5Wanted);
             });
           });
