@@ -7,3 +7,6 @@ email: false
 branches:
 except:
 - "/^v\\d+\\.\\d+\\.\\d+$/"
+env:
+  global:
+    secure: ax/ek6mQQxyTZmE+Utm0wD70f+EUJe64cWBEPoGb2OSPxuC2gr0yhoXvn9To1TAaBaAHSllDTZT1HH5tO3+6Or7Fam4qjWfqxJvaLXjwQkbuUV6jpKsH9vsMfoqtYNW9aZy64UQaSuLwHKyEcWz3dnKbkINrrlWH06jYRzoV/hT5FxI8EfyFDEZm/7jk6fA6T4r+k1qBmPN5VNKAKQ6X8ahBvzZc/bgdAWvfaNs/fJG3YHDeHWc2/snrrUDv08W33xu8uGBahJn5Cg0AT3lBcYf+OJzViOWdiTxNyR2fPktZVUBXONSzYyjQoIJ2vOwa0UaprYsSTopBHj84x0neKgCJcYsqxYihQcNtsHSAwaYjWyfRilxM7luSAJnX57biAwlNTUeEJPekrxrCe0t/YEjaBP05ogoqS+Orp/1kUmOgQW8WucCImq4MwJajIUwcm6knlZNGzx1/ON1vRnhOBRhHuT4Y0huqnWLNWZn5r5YKCXLoxnvDOqj8odiZ2LBilvQI9gG/0xwktnBEcZtpjXJm5IMi/UKqw3Ac152gGG0G6mX4ry3o/vHyUmargCs20Y1efONm6f6DwDuzMq475NKrp+WH6XfjLbCXJAwUQeQNld8ABe+O4R1ELTXF05VfNryP5ix6zxeirZjyjfvrAuUdBCE3nd/GHbaSrgKqHqw=
