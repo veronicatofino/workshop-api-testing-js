@@ -9,8 +9,8 @@ chai.use(chaiSubset);
 const urlBase = 'https://api.github.com';
 const githubUserName = 'aperdomob';
 
-describe('Given a Github Api Test', () => {
-  describe('When want to follow an user', () => {
+describe('Given a Github Api URL for users tests', () => {
+  describe(`When want to follow the user ${githubUserName}`, () => {
     let responseUserFollowed;
 
     before(async () => {
@@ -33,7 +33,7 @@ describe('Given a Github Api Test', () => {
           .set('User-Agent', 'agent');
       });
 
-      it('Then the user should be in the list', () => {
+      it('Then the user should be in the list of following users', () => {
         expect(responseUserVer.status).to.equal(statusCode.OK);
         expect(responseUserVer.body).to.containSubset([{
           login: githubUserName
