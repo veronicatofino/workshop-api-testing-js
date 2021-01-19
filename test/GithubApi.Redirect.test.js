@@ -7,7 +7,7 @@ const githubUserName = 'aperdomob';
 const redirectUrl = 'https://github.com/aperdomob/new-redirect-test';
 
 describe('Given a Github Api URL for redirect test', () => {
-  describe('When want to redirect to a differente url with the HEAD method', () => {
+  describe('When want to redirect to a different url with the HEAD method', () => {
     let responseHeadRedirect;
 
     before(async () => {
@@ -24,7 +24,7 @@ describe('Given a Github Api URL for redirect test', () => {
       expect(responseHeadRedirect.response.headers.location).to.equal(redirectUrl);
     });
 
-    describe('When want to redirect to a differente url with the GET method', () => {
+    describe('When want to redirect to a different url with the GET method', () => {
       let responseGetRedirect;
 
       before(async () => {
