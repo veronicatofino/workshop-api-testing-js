@@ -19,7 +19,7 @@ describe('Given a Github Api Test', () => {
         .set('User-Agent', 'agent');
     });
 
-    it('Then user should haven been followed', async () => {
+    it('Then the user should haven been followed', async () => {
       expect(responseUserFollowed.status).to.equal(statusCode.NO_CONTENT);
       expect(responseUserFollowed.body).to.eql({});
     });
