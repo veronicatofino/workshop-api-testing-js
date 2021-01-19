@@ -46,7 +46,7 @@ describe('Given a Github Api URL for gists tests', () => {
           .set('User-Agent', 'agent');
       });
 
-      it('Then the gist should be retrieved', async () => {
+      it('Then the gist should be retrieved', () => {
         expect(responseGetGist.status).to.equal(statusCode.OK);
         expect(responseGetGist.body).to.containSubset(jsonBody);
       });
@@ -67,6 +67,7 @@ describe('Given a Github Api URL for gists tests', () => {
 
         describe('When want to consult the gist again', () => {
           let responseGistGet;
+
           before(async () => {
             await agent.get(responseGist.body.url)
               .auth('token', process.env.ACCESS_TOKEN)
@@ -75,6 +76,7 @@ describe('Given a Github Api URL for gists tests', () => {
                 responseGistGet = err;
               });
           });
+
           it('Then the gist should not exist', async () => {
             expect(responseGistGet.status).to.equal(statusCode.NOT_FOUND);
           });

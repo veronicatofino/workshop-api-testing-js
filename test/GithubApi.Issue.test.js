@@ -16,7 +16,7 @@ describe('Given a Github Api URL for Issuses tests', () => {
         .set('User-Agent', 'agent');
     });
 
-    it('Then the user should be logged in and at least one of his/her repositories should be public', async () => {
+    it('Then the user should be logged in and at least one of his/her repositories should be public', () => {
       expect(responseLogin.status).to.equal(statusCode.OK);
       expect(responseLogin.body.public_repos).to.satisfy((num) => num > 1);
     });
