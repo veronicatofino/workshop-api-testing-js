@@ -1,8 +1,6 @@
 const { expect } = require('chai');
 const agent = require('superagent');
 const statusCode = require('http-status-codes');
-const chai = require('chai');
-chai.use(require('chai-dom'));
 
 const urlBase = 'https://github.com';
 const githubUserName = 'aperdomob';
