@@ -1,13 +1,15 @@
 const { expect } = require('chai');
 const agent = require('superagent');
 const statusCode = require('http-status-codes');
+const chai = require('chai');
+chai.use(require('chai-dom'));
 
 const urlBase = 'https://github.com';
 const githubUserName = 'aperdomob';
 const redirectUrl = 'https://github.com/aperdomob/new-redirect-test';
 
-describe('Given a Github Api URL for redirect test', () => {
-  describe('When want to redirect to a different url with the HEAD method', () => {
+describe('Given a Github Api URL to do a redirect test', () => {
+  describe('When want to check that, consuming an URL with the HEAD method, it returns a new URL for redirection', () => {
     let responseHeadRedirect;
 
     before(async () => {
@@ -19,12 +21,12 @@ describe('Given a Github Api URL for redirect test', () => {
         });
     });
 
-    it('Then the url should have been redirected', () => {
+    it('Then should return the redirected URL', () => {
       expect(responseHeadRedirect.status).to.equal(statusCode.MOVED_PERMANENTLY);
       expect(responseHeadRedirect.response.headers.location).to.equal(redirectUrl);
     });
 
-    describe('When want to redirect to a different url with the GET method', () => {
+    describe('When want to check that, consuming an URL with the GET method, it redirects automaticallly to a new URL', () => {
       let responseGetRedirect;
 
       before(async () => {
@@ -33,8 +35,9 @@ describe('Given a Github Api URL for redirect test', () => {
           .set('User-Agent', 'agent');
       });
 
-      it('Then the url should have been redirected', () => {
+      it('Then should return the HTML document of the redirected URL', () => {
         expect(responseGetRedirect.status).to.equal(statusCode.OK);
+        expect(responseGetRedirect.text).to.have.string(`<meta property="og:url" content="${redirectUrl}" />`);
       });
     });
   });
