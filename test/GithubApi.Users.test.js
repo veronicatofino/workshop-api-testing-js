@@ -14,7 +14,7 @@ describe('Given a Github Api URL to do a response time test', () => {
     };
 
     before(async () => {
-      response = await agent.head(`${urlBase}/users`)
+      response = await agent.get(`${urlBase}/users`)
         .use(responseTime(callback))
         .auth('token', process.env.ACCESS_TOKEN)
         .set('User-Agent', 'agent');
