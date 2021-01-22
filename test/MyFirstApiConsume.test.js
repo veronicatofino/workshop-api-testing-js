@@ -6,7 +6,8 @@ const { expect } = chai;
 
 describe('First Api Tests', () => {
   it('Consume GET Service', async () => {
-    const response = await agent.get('https://httpbin.org/ip');
+    const response = await agent.get('https://httpbin.org/ip')
+      .set('User-Agent', 'agent');
 
     expect(response.status).to.equal(statusCode.OK);
     expect(response.body).to.have.property('origin');
@@ -19,14 +20,16 @@ describe('First Api Tests', () => {
       city: 'New York'
     };
 
-    const response = await agent.get('https://httpbin.org/get').query(query);
+    const response = await agent.get('https://httpbin.org/get').query(query)
+      .set('User-Agent', 'agent');
 
     expect(response.status).to.equal(statusCode.OK);
     expect(response.body.args).to.eql(query);
   });
 
   it('Consume DELETE Service', async () => {
-    const response = await agent.delete('https://httpbin.org/delete');
+    const response = await agent.delete('https://httpbin.org/delete')
+      .set('User-Agent', 'agent');
 
     expect(response.status).to.equal(statusCode.OK);
   });
@@ -37,7 +40,8 @@ describe('First Api Tests', () => {
       years: 21
     };
 
-    const response = await agent.put('https://httpbin.org/put').send(jsonBody);
+    const response = await agent.put('https://httpbin.org/put').send(jsonBody)
+      .set('User-Agent', 'agent');
 
     expect(response.status).to.equal(statusCode.OK);
     expect(response.body.json).to.eql(jsonBody);
@@ -49,7 +53,8 @@ describe('First Api Tests', () => {
       years: '21'
     };
 
-    const response = await agent.put('https://httpbin.org/put').query(argsBody);
+    const response = await agent.put('https://httpbin.org/put').query(argsBody)
+      .set('User-Agent', 'agent');
 
     expect(response.status).to.equal(statusCode.OK);
     expect(response.body.args).to.eql(argsBody);
@@ -60,7 +65,8 @@ describe('First Api Tests', () => {
       name: 'valentina'
     };
 
-    const response = await agent.patch('https://httpbin.org/patch').send(jsonBody);
+    const response = await agent.patch('https://httpbin.org/patch').send(jsonBody)
+      .set('User-Agent', 'agent');
 
     expect(response.status).to.equal(statusCode.OK);
     expect(response.body.json).to.eql(jsonBody);
@@ -69,14 +75,16 @@ describe('First Api Tests', () => {
   it('Consume PATCH Service with form-data entry', async () => {
     const name = 'jessica';
 
-    const response = await agent.patch('https://httpbin.org/patch').field('name', name);
+    const response = await agent.patch('https://httpbin.org/patch').field('name', name)
+      .set('User-Agent', 'agent');
 
     expect(response.status).to.equal(statusCode.OK);
     expect(response.body.form.name).to.equal(name);
   });
 
   it('Consume HEAD Service', async () => {
-    const response = await agent.head('https://httpbin.org/headers');
+    const response = await agent.head('https://httpbin.org/headers')
+      .set('User-Agent', 'agent');
 
     expect(response.status).to.equal(statusCode.OK);
   });
