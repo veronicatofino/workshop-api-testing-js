@@ -15,7 +15,6 @@ const promiseExample = `let myPromise = new Promise((Resolve, Reject) => {
 
 describe('Given a Github Api URL to do a isomorphic fetch test', () => {
   describe('When want to create a new gist', () => {
-    // let responseStatus;
     let gist;
     let gistResponse;
     const jsonBody = {
