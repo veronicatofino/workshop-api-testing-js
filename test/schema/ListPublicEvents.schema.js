@@ -7,7 +7,13 @@ const listPublicEventsSchema = {
       type: 'array',
       properties: {
         id: { type: 'number' },
-        type: { type: 'string' },
+        type: {
+          type: 'string',
+          enum: [
+            'PushEvent', 'CreateEvent', 'IssuesEvent', 'PublicEvent',
+            'IssueCommentEvent', 'WatchEvent', 'PullRequestEvent', 'DeleteEvent'
+          ]
+        },
         actor: {
           type: 'object',
           properties: {
